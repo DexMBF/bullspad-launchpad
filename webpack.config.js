@@ -1,20 +1,20 @@
-const path = require("path");
+const path = require("path")
 
-const HtmlWebpackPlugin = require("html-webpack-plugin");
-const MiniCssExtractPlugin = require("mini-css-extract-plugin");
-const TerserPlugin = require("terser-webpack-plugin");
-const CopyPlugin = require("copy-webpack-plugin");
-const webpack = require("webpack");
+const HtmlWebpackPlugin = require("html-webpack-plugin")
+const MiniCssExtractPlugin = require("mini-css-extract-plugin")
+const TerserPlugin = require("terser-webpack-plugin")
+const CopyPlugin = require("copy-webpack-plugin")
+const webpack = require("webpack")
 
 const interpolateFileData = (fileData, chunk = false) => {
-  const chunkNameData = fileData.chunk.id.split("_");
-  const shortChunkHash = (fileData.chunk.hash ?? String(Math.random()).split(".")[1]).slice(0, 6);
+  const chunkNameData = fileData.chunk.id.split("_")
+  const shortChunkHash = (fileData.chunk.hash ?? String(Math.random()).split(".")[1]).slice(0, 6)
 
-  if (chunkNameData[0] === "vendors-node") return `modules/${chunkNameData[3]}.${shortChunkHash}.js`;
+  if (chunkNameData[0] === "vendors-node") return `modules/${ chunkNameData[3] }.${ shortChunkHash }.js`
 
 
-  return fileData.chunk.id + (chunk ? `.${shortChunkHash}` : "") + ".js";
-};
+  return fileData.chunk.id + (chunk ? `.${ shortChunkHash }` : "") + ".js"
+}
 
 const config = {
   stats: "minimal",
@@ -56,7 +56,7 @@ const config = {
       process: "process/browser",
       React: "react"
     }),
-    new HtmlWebpackPlugin({template: "index.html"}),
+    new HtmlWebpackPlugin({ template: "index.html" }),
     new MiniCssExtractPlugin(),
     new CopyPlugin({
       patterns: [
@@ -64,7 +64,7 @@ const config = {
           from: "public", to: "public", filter: filepath => filepath.split("/")
             .slice(-1)[0] !== "robots.txt"
         },
-        {from: "public/robots.txt", to: "robots.txt"}
+        { from: "public/robots.txt", to: "robots.txt" }
       ]
     })
   ],
@@ -74,17 +74,17 @@ const config = {
       {
         test: /\.(ts|tsx)$/i,
         loader: "ts-loader",
-        exclude: ["/node_modules/"]
+        exclude: [ "/node_modules/" ]
       },
       {
         test: /\.s[ac]ss$/i,
-        dependency: {not: ["url"]},
-        use: [MiniCssExtractPlugin.loader, "css-loader", "postcss-loader", "sass-loader"]
+        dependency: { not: [ "url" ] },
+        use: [ MiniCssExtractPlugin.loader, "css-loader", "postcss-loader", "sass-loader" ]
       },
       {
         test: /\.css$/i,
-        dependency: {not: ["url"]},
-        use: [MiniCssExtractPlugin.loader, "css-loader", "postcss-loader"]
+        dependency: { not: [ "url" ] },
+        use: [ MiniCssExtractPlugin.loader, "css-loader", "postcss-loader" ]
       },
       {
         test: /\.(eot|svg|ttf|woff|woff2|png|jpg|gif)$/i,
@@ -103,7 +103,7 @@ const config = {
   },
 
   resolve: {
-    extensions: [".tsx", ".ts", ".jsx", ".js", ".json"],
+    extensions: [ ".tsx", ".ts", ".jsx", ".js", ".json" ],
     alias: {
       process: "process/browser"
     },
@@ -167,13 +167,13 @@ const config = {
     maxEntrypointSize: 512000,
     maxAssetSize: 512000
   }
-};
+}
 
 module.exports = env => {
-  if (process.env.NODE_ENV === "production") config.mode = "production";
-  else config.mode = "development";
+  if (process.env.NODE_ENV === "production") config.mode = "production"
+  else config.mode = "development"
 
-  if (env.ALLOW_DEBUG === undefined) env.ALLOW_DEBUG = true;
+  if (env.ALLOW_DEBUG === undefined) env.ALLOW_DEBUG = true
 
   config.plugins = [
     new webpack["DefinePlugin"]({
@@ -183,7 +183,7 @@ module.exports = env => {
       })
     }),
     ...config.plugins
-  ];
+  ]
 
-  return config;
-};
+  return config
+}

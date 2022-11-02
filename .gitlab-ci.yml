@@ -1,59 +1,59 @@
 stages:
-    - build
-    - cloudflare-actions
-    - deploy
+  - build
+  - cloudflare-actions
+  - deploy
 
 cache:
-    paths:
-        - dist/
+  paths:
+    - dist/
 
 build:
-    stage: build
-    script:
-        - ". ~/.nvm/nvm.sh"
-        - nvm use v16.17.1
-        - rm -rf {node_modules,dist}
-        - /usr/local/bin/pnpm install
-        - /usr/local/bin/pnpm run build:dev
-    tags: [development]
-    interruptible: true
-    rules:
-        -   if: $CI_COMMIT_BRANCH == "main"
+  stage: build
+  script:
+    - ". ~/.nvm/nvm.sh"
+    - nvm use v16.17.1
+    - rm -rf {node_modules,dist}
+    - /usr/local/bin/pnpm install
+    - /usr/local/bin/pnpm run build
+  tags: [ development ]
+  interruptible: true
+  rules:
+    - if: $CI_COMMIT_BRANCH == "main"
 
 deploy:
-    stage: deploy
-    script:
-        - mkdir -p /web/product/web3horizen/projects/bullspad-launchpad
-        - cp -rf dist/* /web/product/web3horizen/projects/bullspad-launchpad/
-        - rm -rf dist
-    tags: [development]
-    environment:
-        name: development
-        url: https://product-bullspad.web3horizen.com
-    interruptible: true
-    rules:
-        -   if: $CI_COMMIT_BRANCH == "main"
-    needs:
-        - build
+  stage: deploy
+  script:
+    - mkdir -p /web/product/web3horizen/projects/bullspad-launchpad
+    - cp -rf dist/* /web/product/web3horizen/projects/bullspad-launchpad/
+    - rm -rf dist
+  tags: [ development ]
+  environment:
+    name: development
+    url: https://product-bullspad.web3horizen.com
+  interruptible: true
+  rules:
+    - if: $CI_COMMIT_BRANCH == "main"
+  needs:
+    - build
 
 cloudflare-deploy:
-    stage: cloudflare-actions
-    script:
-        - /usr/bin/python3 /srv/scripts/cloudflare-deploy.py --zone web3horizen.com --name product-bullspad
-    tags: [development]
-    interruptible: true
-    rules:
-        -   if: $CI_COMMIT_BRANCH == "main"
-            when: manual
-    allow_failure: true
+  stage: cloudflare-actions
+  script:
+    - /usr/bin/python3 /srv/scripts/cloudflare-deploy.py --zone web3horizen.com --name product-bullspad
+  tags: [ development ]
+  interruptible: true
+  rules:
+    - if: $CI_COMMIT_BRANCH == "main"
+      when: manual
+  allow_failure: true
 
 cloudflare-erase:
-    stage: cloudflare-actions
-    script:
-        - /usr/bin/python3 /srv/scripts/cloudflare-deploy.py --zone web3horizen.com --name product-bullspad --erase
-    tags: [development]
-    interruptible: true
-    rules:
-        -   if: $CI_COMMIT_BRANCH == "main"
-            when: manual
-    allow_failure: true
+  stage: cloudflare-actions
+  script:
+    - /usr/bin/python3 /srv/scripts/cloudflare-deploy.py --zone web3horizen.com --name product-bullspad --erase
+  tags: [ development ]
+  interruptible: true
+  rules:
+    - if: $CI_COMMIT_BRANCH == "main"
+      when: manual
+  allow_failure: true

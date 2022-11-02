@@ -22,7 +22,7 @@
     "comma-dangle": ["warn", "never"],
     // "no-unused-vars": "warn",
     "no-console": "warn",
-    "semi": ["warn", "always"],
+    "semi": ["warn", "never"],
     "quotes": ["warn", "double"],
     "indent": ["warn", 2],
 
