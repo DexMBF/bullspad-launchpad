@@ -1,45 +1,91 @@
 {
-  "name": "bulls-launchpad",
-  "version": "0.1.0",
-  "private": true,
-  "dependencies": {
-    "@testing-library/jest-dom": "^5.16.5",
-    "@testing-library/react": "^13.4.0",
-    "@testing-library/user-event": "^13.5.0",
-    "eslint": "^8.26.0",
-    "eslint-config-react-app": "^7.0.1",
-    "react": "^18.2.0",
-    "react-dom": "^18.2.0",
-    "react-scripts": "5.0.1",
-    "sass": "^1.55.0",
-    "web-vitals": "^2.1.4"
-  },
-  "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject",
-    "lint:fix": "eslint . --fix"
-  },
-  "eslintConfig": {
-    "extends": [
-      "react-app",
-      "react-app/jest"
-    ]
-  },
-  "browserslist": {
-    "production": [
-      ">0.2%",
-      "not dead",
-      "not op_mini all"
+    "name": "venombridge",
+    "version": "1.0.0",
+    "description": "CrossChain Transactions",
+    "main": "src/main.tsx",
+    "scripts": {
+        "test": "jest --verbose",
+        "build": "webpack --mode=production --node-env=production --env ALLOW_DEBUG=true",
+        "build:production": "webpack --mode=production --node-env=production --env ALLOW_DEBUG=false",
+        "serve": "webpack serve"
+    },
+    "keywords": [
+        "bridge",
+        "crypto",
+        "venom"
     ],
-    "development": [
-      "last 1 chrome version",
-      "last 1 firefox version",
-      "last 1 safari version"
-    ]
-  },
-  "devDependencies": {
-    "typescript": "^4.8.4"
-  }
+    "author": "Venom Foundation",
+    "license": "ISC",
+    "devDependencies": {
+        "@babel/core": "^7.19.3",
+        "@knownout/amount-formatter": "^0.1.2",
+        "@knownout/base-controller": "^0.1.1",
+        "@knownout/evm-wallet-controller": "0.1.39",
+        "@knownout/lib": "^0.1.3",
+        "@knownout/modal-window": "^0.1.5",
+        "@knownout/modal-window-controller": "^0.1.5",
+        "@metamask/providers": "^9.1.0",
+        "@swc/core": "^1.3.7",
+        "@types/react": "^18.0.21",
+        "@types/react-dom": "^18.0.6",
+        "autoprefixer": "^10.4.12",
+        "bignumber.js": "^9.1.0",
+        "buffer": "^6.0.3",
+        "copy-webpack-plugin": "^11.0.0",
+        "css-loader": "^6.7.1",
+        "file-loader": "^6.2.0",
+        "html-webpack-plugin": "^5.5.0",
+        "https-browserify": "^1.0.0",
+        "mini-css-extract-plugin": "^2.6.1",
+        "mobx": "^6.6.2",
+        "mobx-react-lite": "^3.4.0",
+        "postcss": "^8.4.18",
+        "postcss-loader": "^7.0.1",
+        "process": "^0.11.10",
+        "react": "^18.2.0",
+        "react-dom": "^18.2.0",
+        "react-router-dom": "^6.4.2",
+        "sass": "^1.55.0",
+        "sass-loader": "^13.1.0",
+        "stream-http": "^3.2.0",
+        "style-loader": "^3.3.1",
+        "terser-webpack-plugin": "^5.3.6",
+        "ts-loader": "^9.4.1",
+        "typescript": "^4.8.4",
+        "web3": "^1.8.0",
+        "webpack": "^5.74.0",
+        "webpack-cli": "^4.10.0",
+        "webpack-dev-server": "^4.11.1"
+    },
+    "postcss": {
+        "plugins": {
+            "autoprefixer": { }
+        }
+    },
+    "browserslist": {
+        "production": [
+            ">0.2%",
+            "not dead",
+            "not op_mini all"
+        ],
+        "development": [
+            "last 1 chrome version",
+            "last 1 firefox version",
+            "last 1 safari version",
+            "last 1 ie version"
+        ]
+    },
+    "pnpm": {
+        "allowedDeprecatedVersions": {
+            "webextension-polyfill-ts": "*",
+            "@walletconnect/mobile-registry": "*",
+            "mkdirp-promise": "*",
+            "uuid": "*",
+            "cids": "*",
+            "multicodec": "*",
+            "request": "*",
+            "multibase": "*",
+            "har-validator": "*"
+        }
+    }
 }

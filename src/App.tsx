@@ -1,9 +1,11 @@
-const App = () => {
-  return (
-    <div className="App">
-      Bulls Launchpad
-    </div>
-  )
-}
+import "./App.scss";
 
-export default App
+const App = () => {
+    return (
+        <div className="App">
+            BullsPad Launchpad
+        </div>
+    );
+};
+
+export default App;
