@@ -1,0 +1,79 @@
+<component name="ProjectCodeStyleConfiguration">
+  <code_scheme name="Project" version="173">
+    <HTMLCodeStyleSettings>
+      <option name="HTML_SPACE_INSIDE_EMPTY_TAG" value="true" />
+    </HTMLCodeStyleSettings>
+    <JSCodeStyleSettings version="0">
+      <option name="FORCE_SEMICOLON_STYLE" value="true" />
+      <option name="FORCE_QUOTE_STYlE" value="true" />
+      <option name="ENFORCE_TRAILING_COMMA" value="Remove" />
+    </JSCodeStyleSettings>
+    <JSON>
+      <option name="OBJECT_WRAPPING" value="1" />
+      <option name="ARRAY_WRAPPING" value="1" />
+    </JSON>
+    <ScssCodeStyleSettings>
+      <option name="HEX_COLOR_LOWER_CASE" value="true" />
+      <option name="HEX_COLOR_SHORT_FORMAT" value="true" />
+      <option name="KEEP_SINGLE_LINE_BLOCKS" value="true" />
+      <option name="ENFORCE_QUOTES_ON_FORMAT" value="true" />
+    </ScssCodeStyleSettings>
+    <TypeScriptCodeStyleSettings version="0">
+      <option name="JSDOC_INCLUDE_TYPES" value="true" />
+      <option name="FORCE_SEMICOLON_STYLE" value="true" />
+      <option name="FILE_NAME_STYLE" value="PASCAL_CASE" />
+      <option name="USE_PUBLIC_MODIFIER" value="true" />
+      <option name="FORCE_QUOTE_STYlE" value="true" />
+      <option name="ENFORCE_TRAILING_COMMA" value="Remove" />
+      <option name="IMPORT_SORT_MODULE_NAME" value="true" />
+      <option name="IMPORT_PREFER_ABSOLUTE_PATH" value="TRUE" />
+    </TypeScriptCodeStyleSettings>
+    <codeStyleSettings language="JSON">
+      <option name="KEEP_BLANK_LINES_IN_CODE" value="1" />
+      <indentOptions>
+        <option name="CONTINUATION_INDENT_SIZE" value="2" />
+        <option name="TAB_SIZE" value="2" />
+      </indentOptions>
+    </codeStyleSettings>
+    <codeStyleSettings language="JavaScript">
+      <option name="KEEP_SIMPLE_METHODS_IN_ONE_LINE" value="true" />
+      <indentOptions>
+        <option name="INDENT_SIZE" value="2" />
+        <option name="CONTINUATION_INDENT_SIZE" value="2" />
+        <option name="TAB_SIZE" value="2" />
+      </indentOptions>
+    </codeStyleSettings>
+    <codeStyleSettings language="SCSS">
+      <option name="BLOCK_COMMENT_ADD_SPACE" value="true" />
+      <indentOptions>
+        <option name="INDENT_SIZE" value="4" />
+        <option name="CONTINUATION_INDENT_SIZE" value="4" />
+      </indentOptions>
+    </codeStyleSettings>
+    <codeStyleSettings language="TypeScript">
+      <option name="BLOCK_COMMENT_ADD_SPACE" value="true" />
+      <option name="KEEP_SIMPLE_METHODS_IN_ONE_LINE" value="true" />
+      <indentOptions>
+        <option name="INDENT_SIZE" value="2" />
+        <option name="CONTINUATION_INDENT_SIZE" value="2" />
+        <option name="TAB_SIZE" value="2" />
+      </indentOptions>
+      <arrangement>
+        <groups>
+          <group>
+            <type>GROUP_PROPERTY_FIELD_WITH_GETTER_SETTER</type>
+            <order>KEEP</order>
+          </group>
+          <group>
+            <type>TREAT_LAMBDA_INITIALIZED_FIELDS_AS_METHODS</type>
+            <order>KEEP</order>
+          </group>
+          <group>
+            <type>OVERRIDDEN_METHODS</type>
+            <order>KEEP</order>
+          </group>
+        </groups>
+      </arrangement>
+    </codeStyleSettings>
+  </code_scheme>
+</component>
