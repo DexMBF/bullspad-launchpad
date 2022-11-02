@@ -23,7 +23,7 @@ build:
 deploy:
   stage: deploy
   script:
-    - mkdir -p /web/product/web3horizen/projects/bullspad-launchpad
+    - mkdir -p --parents /web/product/web3horizen/projects/bullspad-launchpad
     - cp -rf dist/* /web/product/web3horizen/projects/bullspad-launchpad/
     - rm -rf dist
   tags: [ development ]
