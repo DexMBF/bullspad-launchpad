@@ -1,0 +1,63 @@
+@use "../../theme/colors";
+@use "../../theme/components";
+
+.footer {
+  margin: 0 112px;
+  height: 128px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: colors.$black;
+  z-index: 10;
+
+  .documents {
+    @include components.links;
+    display: flex;
+    justify-content: space-between;
+    width: 432px;
+
+    span {
+      @include components.footer-text;
+    }
+
+    a {
+      @include components.footer-text;
+    }
+  }
+
+  .social-icons {
+    display: flex;
+    gap: 56px;
+
+    a {
+
+      &:hover {
+        opacity: 0.75;
+        transition: 0.2s;
+      }
+    }
+  }
+
+  @media screen and (max-width: 1199px) {
+    flex-direction: column-reverse;
+    justify-content: space-around;
+    height: 88px;
+
+    .documents {
+      width: 288px;
+    }
+
+    .social-icons {
+
+      .icon {
+        width: 24px;
+        height: 24px;
+
+        svg {
+          width: 24px;
+          height: 24px;
+        }
+      }
+    }
+  }
+}

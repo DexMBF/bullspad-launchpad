@@ -3,7 +3,6 @@
 @import url("https://necolas.github.io/normalize.css/8.0.1/normalize.css");
 
 body, html {
-  position: fixed;
   display: block;
 
   width: 100%;
@@ -27,7 +26,6 @@ body {
 
 div#root {
   background: colors.$black;
-  position: fixed;
   display: flex;
 
   top: 0;
@@ -41,4 +39,25 @@ div#root {
   flex-direction: column;
 
   overflow: hidden;
+}
+
+main {
+  min-height: calc(100vh - 146px);
+
+  @media screen and (max-width: 1199px) {
+    min-height: calc(100vh - 187px);
+    width: fit-content;
+    margin: 0 auto;
+  }
+
+  @media screen and (max-width: 500px) {
+    width: unset;
+    margin: 0;
+  }
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+  position: relative;
 }
