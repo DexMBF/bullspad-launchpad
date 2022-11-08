@@ -1,0 +1,92 @@
+@use "../../theme/components";
+@use "../../theme/colors";
+
+.nf-page-container {
+  @include components.container;
+  margin-top: 145px;
+
+  img.bull-image {
+    position: absolute;
+    right: -310px;
+    bottom: 0;
+    width: 880px;
+    height: 766.86px;
+    z-index: 0;
+  }
+
+  img.triangles {
+    position: absolute;
+    width: 416.5px;
+    height: 434px;
+    left: 0;
+    top: 90px;
+    right: 40px;
+    bottom: 0;
+    margin: auto;
+  }
+
+  .header {
+    @include components.text-header;
+    margin-top: 101px;
+  }
+
+  .description {
+    @include components.text-description;
+  }
+
+  .button {
+    margin-top: 98px;
+  }
+
+  .error-title {
+    position: absolute;
+    width: fit-content;
+    height: fit-content;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+    font-family: 'Krona One', sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 128px;
+    line-height: 140%;
+    color: colors.$white;
+    z-index: 1;
+  }
+
+  @media screen and (max-width: 1199px) {
+
+    img.triangles {
+      width: 178px;
+      height: 134px;
+      right: 0;
+      bottom: 50px;
+      z-index: 0;
+
+      @media screen and (max-width: 373px) {
+        bottom: 0;
+      }
+    }
+
+    .header {
+      display: flex;
+      text-align: center;
+      align-self: center;
+      margin-top: 0;
+    }
+
+    .error-title {
+      position: relative;
+      font-size: 68px;
+      line-height: 140%;
+      margin: 8px auto;
+    }
+
+    .button {
+      margin-top: 16px;
+      z-index: 1;
+    }
+  }
+}

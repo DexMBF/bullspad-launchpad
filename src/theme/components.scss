@@ -1,0 +1,53 @@
+@use "./colors";
+
+@mixin text-header {
+  font-family: "Krona One", sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 40px;
+  line-height: 140%;
+  color: colors.$white;
+
+  @media screen and (max-width: 1199px) {
+    font-weight: 700;
+    font-size: 20px;
+  }
+}
+
+@mixin text-description {
+  font-family: "Manrope", sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 22px;
+  color: colors.$white;
+  margin-top: 24px;
+
+  @media screen and (max-width: 1199px) {
+    font-size: 12px;
+    line-height: 16px;
+    margin-top: 8px;
+  }
+}
+
+@mixin container {
+  margin: 0 112px;
+
+  @media screen and (max-width: 1199px) {
+    margin: 8px 16px 0 16px;
+    display: flex;
+    align-self: center;
+    flex-direction: column;
+    position: relative;
+    padding: 32px 16px;
+    background: colors.$dark-grey;
+    border: 1px solid colors.$grey;
+    border-radius: 16px;
+    width: 384px;
+  }
+
+  @media screen and (max-width: 500px) {
+    width: unset;
+    align-self: unset;
+  }
+}
