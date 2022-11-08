@@ -1,0 +1,94 @@
+@use "../../theme/colors";
+
+.button {
+  font-family: "Manrope", sans-serif;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 22px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: 0.2s;
+
+  &:hover {
+    box-shadow: 4px 4px colors.$blue;
+  }
+
+  &.white {
+    color: colors.$black;
+    border: 1px solid colors.$white;
+    background: colors.$white;
+
+    &:active {
+      color: colors.$grey;
+      box-shadow: 4px 4px colors.$blue;
+    }
+  }
+
+  &.black-n-white {
+    color: colors.$white;
+    border: 1px solid colors.$white;
+    background: colors.$black;
+
+    &:active {
+      color: colors.$grey;
+      box-shadow: 4px 4px colors.$blue;
+    }
+  }
+
+  &.green {
+    color: colors.$black;
+    border: 1px solid colors.$green;
+    background: colors.$green;
+
+    &:active {
+      color: colors.$grey;
+      box-shadow: 4px 4px colors.$blue;
+    }
+  }
+
+  &.black-n-green {
+    color: colors.$white;
+    border: 1px solid colors.$green;
+    background: colors.$black;
+
+    &:active {
+      color: colors.$grey;
+      box-shadow: 4px 4px colors.$blue;
+    }
+  }
+
+  &#small {
+    padding: 8px 24px;
+  }
+
+  &#medium {
+    padding: 16px 24px;
+  }
+
+  &#large {
+    padding: 16px 56px;
+  }
+
+  @media screen and (max-width: 1199px) {
+    font-weight: 600;
+    font-size: 12px;
+    line-height: 16px;
+
+    &:hover {
+      box-shadow: none;
+    }
+
+    &#small {
+      padding: 4px 8px;
+    }
+
+    &#medium {
+      padding: 4px 16px;
+    }
+
+    &#large {
+      padding: 8px 16px;
+    }
+  }
+}
