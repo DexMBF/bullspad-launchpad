@@ -1,8 +1,21 @@
 import "./index.scss"
+import { DiscordIcon, TelegramIcon, TwitterIcon } from "../Icon"
 import { SOCIAL_NETWORKS } from "../../theme/sources"
-import Icon from "../Icon"
 
 const Footer = () => {
+  const getIcon = (icon: string) => {
+    switch(icon) {
+    case "twitter":
+      return <TwitterIcon />
+    case "telegram":
+      return <TelegramIcon />
+    case "discord":
+      return <DiscordIcon />
+    default:
+      return
+    }
+  }
+
   return (
     <div className="footer">
       <div className="documents">
@@ -24,7 +37,7 @@ const Footer = () => {
             key={icon.icon}
             href={icon.href}
           >
-            <Icon icon={icon.icon} />
+            {getIcon(icon.icon)}
           </a>
         ))}
       </div>

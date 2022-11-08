@@ -5,15 +5,15 @@ export const NOT_FOUND_TRIANGLES = `${APP_URL_ICON}/404_triangles.webp`
 
 export const SOCIAL_NETWORKS = [
   {
-    icon: "twitterIcon",
+    icon: "twitter",
     href: ""
   },
   {
-    icon: "telegramIcon",
+    icon: "telegram",
     href: ""
   },
   {
-    icon: "discordIcon",
+    icon: "discord",
     href: ""
   }
 ]
